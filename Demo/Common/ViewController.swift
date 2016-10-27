@@ -345,17 +345,17 @@ extension ViewController {
             consumerKey:    serviceParameters["consumerKey"]!,
             consumerSecret: serviceParameters["consumerSecret"]!,
             authorizeUrl:   "https://api.instagram.com/oauth/authorize",
-            responseType:   "token"
+            //responseType:   "token"
             // or
-            // accessTokenUrl: "https://api.instagram.com/oauth/access_token",
-            // responseType:   "code"
+             accessTokenUrl: "https://api.instagram.com/oauth/access_token",
+             responseType:   "code"
         )
         
         let state = generateState(withLength: 20)
         self.oauthswift = oauthswift
         oauthswift.authorizeURLHandler = getURLHandler()
         let _ = oauthswift.authorize(
-            withCallbackURL: URL(string: "oauth-swift://oauth-callback/instagram")!, scope: "likes+comments", state:state,
+            withCallbackURL: URL(string: "http://pakwlau.com/callback")!, scope: "likes+comments", state:state,
             success: { credential, response, parameters in
                 self.showTokenAlert(name: serviceParameters["name"], credential: credential)
                 self.testInstagram(oauthswift)

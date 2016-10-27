@@ -30,8 +30,8 @@ let Github =
 ]
 let Instagram =
 [
-    "consumerKey": "",
-    "consumerSecret": ""
+    "consumerKey": "e7b0a99ec2e6482d92556f39931c95a4",
+    "consumerSecret": "db814db57ed548b4baf9fef7fe0ae5d1"
 ]
 let Foursquare =
 [
